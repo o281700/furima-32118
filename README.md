@@ -27,14 +27,17 @@ Things you may want to cover:
 
 ## users テーブル
 
-| column    | type   | option     |
-| --------- | ------ | ---------- |
-| nickname  | string | null: false|
-| email     | string | null: false|
-| password  | string | null: false|
-| full_name | string | null: false|
-| name_kana | string | null: false|
-| birthday  | string | null: false|
+| column             | type   | option      |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| password           | string | null: false |
+| encrypted_password | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| last_kana          | string | null: false |
+| first_kana         | string | null: false |
+| birthday           | date　 | null: false |
 
 ### Association
 - has_many items
@@ -42,22 +45,27 @@ Things you may want to cover:
 
 ## items テーブル
 
-| column   | type    | option                         |
-| -------- | ------- | ------------------------------ |
-| image    | text    | null: false                    |
-| name     | string  | null: false                    |
-| explain  | text    | null: false                    |
-| category | string  | null: false                    |
-| status   | string  | null: false                    |
-| fee      | string  | null: false                    |
-| area     | string  | null: false                    |
-| days     | string  | null: false                    |
-| price    | integer | null: false                    |
-| user_id  | integer | null: false, foreign_key: true |
+| column      | type    | option                         |
+| ----------- | ------- | ------------------------------ |
+| name        | string  | null: false                    |
+| explain     | text    | null: false                    |
+| category_id | integer | numericality: other_than: 1    |
+| status_id   | integer | numericality: other_than: 1    |
+| fee_id      | integer | numericality: other_than: 1    |
+| area_id     | integer | numericality: other_than: 1    |
+| days_id     | integer | numericality: other_than: 1    |
+| price       | integer | null: false                    |
+| user_id     | integer | null: false, foreign_key: true |
 
 ### Association
 - belongs_to user
 - has_one bay
+- extend ActiveHash::Associations::ActiveRecordExtensions
+- belongs_to_active_hash category
+- belongs_to_active_hash status
+- belongs_to_active_hash fee
+- belongs_to_active_hash area
+- belongs_to_active_hash days
 
 ## buys テーブル
 
@@ -74,17 +82,15 @@ Things you may want to cover:
 
 ## infos テーブル
 
-| column | type    | option      |
-| ------ | ------- | ----------- |
-| card   | integer | null: false |
-| exp    | integer | null: false |
-| code   | integer | null: false |
-| postal | integer | null: false |
-| plef   | string  | null: false |
-| city   | string  | null: false |
-| add    | string  | null: false |
-| bldg   | string  |             |
-| tel    | integer | null: false |
+| column | type    | option                         |
+| ------ | ------- | ------------------------------ |
+| postal | integer | null: false                    |
+| plef   | string  | null: false                    |
+| city   | string  | null: false                    |
+| add    | string  | null: false                    |
+| bldg   | string  |                                |
+| tel    | integer | null: false                    |
+| buy_id | integer | null: false, foreign_key: true |
 
 ### Association
 - belongs_to buy
