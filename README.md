@@ -83,7 +83,7 @@ Things you may want to cover:
 | column  | type    | option                         |
 | ------  | ------- | ------------------------------ |
 | postal  | string  | null: false                    |
-| plef_id | integer | null: false                    |
+| area_id | integer | null: false                    |
 | city    | string  | null: false                    |
 | add     | string  | null: false                    |
 | bldg    | string  |                                |
@@ -92,4 +92,4 @@ Things you may want to cover:
 
 ### Association
 - belongs_to buy
-- belongs_to_active_hash plef
+- belongs_to_active_hash area
