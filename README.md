@@ -80,15 +80,16 @@ Things you may want to cover:
 
 ## infos テーブル
 
-| column | type    | option                         |
-| ------ | ------- | ------------------------------ |
-| postal | string  | null: false                    |
-| plef   | string  | null: false                    |
-| city   | string  | null: false                    |
-| add    | string  | null: false                    |
-| bldg   | string  |                                |
-| tel    | integer | null: false                    |
-| buy_id | integer | null: false, foreign_key: true |
+| column  | type    | option                         |
+| ------  | ------- | ------------------------------ |
+| postal  | string  | null: false                    |
+| plef_id | integer | null: false                    |
+| city    | string  | null: false                    |
+| add     | string  | null: false                    |
+| bldg    | string  |                                |
+| tel     | string  | null: false                    |
+| buy_id  | integer | null: false, foreign_key: true |
 
 ### Association
 - belongs_to buy
+- belongs_to_active_hash plef
