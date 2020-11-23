@@ -10,11 +10,11 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :explain
-    validates :category_id
-    validates :statusu_id
-    validates :fee_id
-    validates :area_id
-    validates :days_id
+    validates :category_id, numericality: { other_than: 1 } 
+    validates :statusu_id, numericality: { other_than: 1 } 
+    validates :fee_id, numericality: { other_than: 1 } 
+    validates :area_id, numericality: { other_than: 1 } 
+    validates :days_id, numericality: { other_than: 1 } 
     validates :price
     validates :user_id, foreign_key: true
   end
