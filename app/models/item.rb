@@ -20,8 +20,7 @@ class Item < ApplicationRecord
       validates :area_id
       validates :days_id
     end
-    validates :price, numericality: { only_integer: true, message: 'Half-width number' }
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: 'Out of setting range' }
+    validates :price, numericality: { only_integer: true, message: 'Half-width number' }, inclusion: { in:300..9999999, message: 'Out of setting range' }
     validates :user_id
   end
 end
