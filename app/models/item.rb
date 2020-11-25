@@ -18,7 +18,7 @@ class Item < ApplicationRecord
       validates :status_id
       validates :fee_id
       validates :area_id
-      validates :days_id
+      validates :day_id
     end
     validates :price, numericality: { only_integer: true, message: 'Half-width number' },
                       inclusion: { in: 300..9_999_999, message: 'Out of setting range' }
