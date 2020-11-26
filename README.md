@@ -40,7 +40,7 @@ Things you may want to cover:
 
 ### Association
 - has_many items
-- has_many buys
+- has_many orders
 
 ## items テーブル
 
@@ -65,7 +65,7 @@ Things you may want to cover:
 - belongs_to_active_hash area
 - belongs_to_active_hash days
 
-## buys テーブル
+## orders テーブル
 
 | column | type       | option                         |
 | ------ | ---------- | ------------------------------ |
@@ -88,8 +88,8 @@ Things you may want to cover:
 | add     | string     | null: false                    |
 | bldg    | string     |                                |
 | tel     | string     | null: false                    |
-| buy     | references | null: false, foreign_key: true |
+| order   | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to buy
+- belongs_to order
 - belongs_to_active_hash area
