@@ -52,7 +52,7 @@ Things you may want to cover:
 | status_id   | integer | null: false                    |
 | fee_id      | integer | null: false                    |
 | area_id     | integer | null: false                    |
-| days_id     | integer | null: false                    |
+| day_id      | integer | null: false                    |
 | price       | integer | null: false                    |
 | user_id     | integer | null: false, foreign_key: true |
 
@@ -67,10 +67,10 @@ Things you may want to cover:
 
 ## buys テーブル
 
-| column  | type    | option                         |
-| ------- | ------- | ------------------------------ |
-| user_id | integer | null: false, foreign_key: true |
-| item_id | integer | null: false, foreign_key: true |
+| column | type       | option                         |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to user
@@ -80,15 +80,15 @@ Things you may want to cover:
 
 ## infos テーブル
 
-| column  | type    | option                         |
-| ------  | ------- | ------------------------------ |
-| postal  | string  | null: false                    |
-| area_id | integer | null: false                    |
-| city    | string  | null: false                    |
-| add     | string  | null: false                    |
-| bldg    | string  |                                |
-| tel     | string  | null: false                    |
-| buy_id  | integer | null: false, foreign_key: true |
+| column  | type       | option                         |
+| ------  | ---------- | ------------------------------ |
+| postal  | string     | null: false                    |
+| area_id | integer    | null: false                    |
+| city    | string     | null: false                    |
+| add     | string     | null: false                    |
+| bldg    | string     |                                |
+| tel     | string     | null: false                    |
+| buy     | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to buy
