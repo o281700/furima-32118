@@ -1,6 +1,6 @@
 class OrderForm
   include ActiveModel::Model
-  attr_accessor :postal, :area_id, :city, :add, :bldg, :tel, :order_id, :user_id, :item_id
+  attr_accessor :postal, :area_id, :city, :add, :bldg, :tel, :order_id, :user_id, :item_id, :token, :price
 
   with_options presence: true do
     validates :postal, format: { with: /\A\d{3}-\d{4}\z/, message: 'Input correctly' }
@@ -8,6 +8,7 @@ class OrderForm
     validates :city
     validates :add
     validates :tel, numericality: { only_integer: true, message: 'Input only number' }
+    validates :token
   end
 
   def save

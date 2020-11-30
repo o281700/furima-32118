@@ -7,7 +7,7 @@ RSpec.describe OrderForm, type: :model do
 
   describe '商品購入機能' do
     context '購入者情報が保存できるとき' do
-      it '全ての情報が入力されていれば保存できる' do
+      it '全ての情報(token含む)が入力されていれば保存できる' do
         expect(@order_form).to be_valid
       end
     end
@@ -46,6 +46,11 @@ RSpec.describe OrderForm, type: :model do
         @order_form.tel = '090-1234567'
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include('Tel Input only number')
+      end
+      it 'tokenが空のとき' do
+        @order_form.token = nil
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Token can't be blank")
       end
     end
   end
