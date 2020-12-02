@@ -9,6 +9,8 @@ class OrderForm
     validates :add
     validates :tel, numericality: { only_integer: true, message: 'Input only number' }, length: { maximum: 11 }
     validates :token
+    validates :user_id
+    validates :item_id
   end
 
   def save
