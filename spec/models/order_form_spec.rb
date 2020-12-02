@@ -10,6 +10,10 @@ RSpec.describe OrderForm, type: :model do
       it '全ての情報(token含む)が入力されていれば保存できる' do
         expect(@order_form).to be_valid
       end
+      it '建物名が空白でも保存できる' do
+        @order_form.bldg = ''
+        expect(@order_form).to be_valid
+      end
     end
     context '購入者情報が保存できないとき' do
       it '郵便番号が空白のとき' do
@@ -46,6 +50,11 @@ RSpec.describe OrderForm, type: :model do
         @order_form.tel = '090-1234567'
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include('Tel Input only number')
+      end
+      it '電話番号が11桁以上のとき' do
+        @order_form.tel = '090123456789'
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include('Tel is too long (maximum is 11 characters)')
       end
       it 'tokenが空のとき' do
         @order_form.token = nil

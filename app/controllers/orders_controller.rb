@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   def index
     @order_item = Item.find(params[:item_id])
     @order_form = OrderForm.new
-    return redirect_to root_path if (@order_item.user.id == current_user.id) || @order_item.order != nil
+    return redirect_to root_path if (@order_item.user.id == current_user.id) || !@order_item.order.nil?
   end
 
   def create
@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     ).merge(
       user_id: current_user.id, item_id: params[:item_id],
       token: params[:token], price: Item.find(params[:item_id]).price
-      )
+    )
   end
 
   def pay_item
