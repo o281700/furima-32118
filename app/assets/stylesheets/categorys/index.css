@@ -1,0 +1,36 @@
+.category-content {
+  width: 65%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5vh 0;
+}
+
+.category-content > h2 {
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+}
+
+.category-link a {
+  background-color: #FFF;
+  display: block;
+  color: #000;
+  padding: 10px 50px;
+  border: 1px solid gray;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+}
+
+.category-link a:hover {
+  color: #fff;
+  background-color: #3ccace;
+  box-shadow: none;
+} 
