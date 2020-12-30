@@ -139,6 +139,9 @@
 
 
 /* /商品の概要 */
+.comment-box > strong > p {
+  text-align: center;
+}
 
 .comment-box {
   width: 40vw;
