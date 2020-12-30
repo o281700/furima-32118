@@ -2,11 +2,11 @@
   width: 65%;
   text-align: center;
   margin: 0 auto;
-  padding: 5vh 0;
+  padding: 10vh 0;
 }
 
 .category-content > h2 {
-  font-size: 2rem;
+  font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
   margin-bottom: 3vh;
