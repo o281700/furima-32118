@@ -139,11 +139,26 @@
 
 
 /* /商品の概要 */
+.comment-box > strong > p {
+  text-align: center;
+}
+
+.comment-index {
+  text-align: left;
+  line-height: 2;
+}
+
+.comment-comment-box {
+  width: 40vw;
+  background-color: #fff;
+  margin-bottom: 5vh;
+  text-align: center;
+}
 
 .comment-box {
   width: 40vw;
   background-color: #fff;
-  margin: 5vh 0;
+  margin: 5vh 0 2vh 0;
   text-align: center;
 }
 
