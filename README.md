@@ -41,6 +41,7 @@ Things you may want to cover:
 ### Association
 - has_many items
 - has_many orders
+- has_many comments
 
 ## items テーブル
 
@@ -64,6 +65,7 @@ Things you may want to cover:
 - belongs_to_active_hash fee
 - belongs_to_active_hash area
 - belongs_to_active_hash days
+- has_many comments
 
 ## orders テーブル
 
@@ -93,3 +95,13 @@ Things you may want to cover:
 ### Association
 - belongs_to order
 - belongs_to_active_hash area
+
+| column | type       | option                         |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to item
+- belongs_to user
