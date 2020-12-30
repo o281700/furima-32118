@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   has_one :order
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :category
@@ -15,7 +15,7 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :explain
-    with_options numericality: { other_than: 1, message: 'status Select' } do
+    with_options numericality: { other_than: 1, message: 'Select' } do
       validates :category_id
       validates :status_id
       validates :fee_id
