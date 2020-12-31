@@ -219,3 +219,16 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comment-text {
+  color: #000;
+}
+
+.comment-comment_user-text {
+  font-size: 1.2rem;
+}
+
+.comment-comment_user-text a {
+  color: #000;
+  padding-left: 10px;
+}
