@@ -1,0 +1,33 @@
+.user-show {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user-data {
+  height: 25vh;
+  background-image: image-url('furima-header01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  // padding: 0 0 2vh 5vh;
+  margin-bottom: 10vh;
+  position: relative;
+}
+
+.user-data > p {
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.user-icon {
+  position: absolute;
+  top: 65%;
+  left: 3%;
+  height: auto;
+  width: 10%;
+  background-color: #fff;
+  border-radius: 50%;
+}
