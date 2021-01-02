@@ -94,24 +94,31 @@
     <div class="comment-index">
       <% if @comments.size != 0 %>
         <% @comments.each do |comment| %>
-          <p class='comment-comment_user-text'>
-            <strong><%= link_to comment.user.nickname, user_path(comment.user) %> : </strong>
-            <%= comment.text %>
-          </p>
+          <div class='comment-main'>
+              <div class='comment-nickname'>
+                <%= link_to comment.user.nickname, user_path(comment.user) %>
+              </div>
+              :
+              <div class='comment-user-text'><%= comment.text %></div>
+          </div>
         <% end %>
       <% end%>
     </div>
   </div>
 
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
+    <div class='links-left'>
+      <% if @item.next.present? %>
+        <%= link_to '＜ 前の商品', item_path(@item.next), class: 'change-item-btn' %>
+      <% end %>
+    </div>
+    <div  class='links-right'>
+      <% if @item.previous.present? %>
+        <%= link_to '次の商品 ＞', item_path(@item.previous), class: 'change-item-btn' %>
+      <% end %>
+    </div>
   </div>
-  <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
+  <%= link_to "#{@item.category.name}をもっと見る", category_path(@item.category_id), class: 'another-item' %>
 </div>
 
 <%= render "shared/footer" %>
