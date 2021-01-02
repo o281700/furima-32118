@@ -3,32 +3,8 @@
 <div class='item-contents'>
   <h2 class='title'><%= "#{@category.name}の商品一覧" %></h2>
   <ul class='item-lists'>
-    <% @category_items.each do |category_item| %>
-      <li class='list'>
-        <%= link_to item_path(category_item.id) do %>
-          <div class='item-img-content'>
-            <%= image_tag category_item.image, class: "item-img" %>
-            <% if category_item.order != nil %>
-              <div class='sold-out'>
-                <span>Sold Out!!</span>
-              </div>
-            <% end %>
-          </div>
-          <div class='item-info'>
-            <h3 class='item-name'>
-              <%= category_item.name %>
-            </h3>
-            <div class='item-price'>
-              <span><%= category_item.price %>円<br><%= '配送料負担' %></span>
-              <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </li>
-    <% end %>
+  
+    <%= render partial: 'shared/items', collection: @category_items, as: :item %>
 
     <% if @category_items.size == 0 %>
       <li class='list'>
@@ -50,7 +26,8 @@
       </li>
     <% end %>
   </ul>
-</div> 
+</div>
+
 <%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
