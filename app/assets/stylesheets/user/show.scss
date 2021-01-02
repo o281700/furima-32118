@@ -46,10 +46,6 @@
 }
 
 // ユーザー詳細サイドバー
-.user-profile {
-  padding: 0 2vw;
-}
-
 .user-show-left {
   padding: 0 3vw 0 0;
   width: 22%;
@@ -57,19 +53,23 @@
 }
 
 .user-profile {
-  min-height: 30vh;
+  min-height: 1rem;
+  margin-bottom: 2vh;
+}
+
+.user-profile, .user-setting {
   border: 1px solid #acacac;
   background-color: #fff;
 }
 
-.user-profile-title {
-  padding: 15px 0;
+.user-profile-title, .user-setting-title {
+  padding: 10px 1vw;
   border-bottom: 1px solid #acacac;
   font-weight: bold;
 }
 
-.user-profile-text {
-  padding: 20px 0;
+.user-profile-text, .user-setting-profile {
+  padding: 10px 1vw;
 }
 
 // ユーザー出品商品一覧
@@ -90,4 +90,17 @@
 
 .user-item > .item-contents > .item-lists {
   width: 100%;
+}
+
+// ユーザー設定欄
+.user-setting-profile {
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-setting-profile:hover {
+  // color: #fff;
+  // background-color: #3ccace;
+  background-color: #eee;
 }
