@@ -244,7 +244,7 @@ a {
   justify-content: center;
 }
 
-.item-lists>.list {
+.item-lists > .list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
@@ -309,3 +309,15 @@ a {
 }
 
 /* //商品一覧 */
+
+.item-lists-user {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-lists-user > .list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
