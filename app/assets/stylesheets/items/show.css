@@ -149,14 +149,14 @@
 }
 
 .comment-comment-box {
-  width: 40vw;
+  width: 50vw;
   background-color: #fff;
   margin-bottom: 5vh;
   text-align: center;
 }
 
 .comment-box {
-  width: 40vw;
+  width: 50vw;
   background-color: #fff;
   margin: 5vh 0 2vh 0;
   text-align: center;
@@ -205,6 +205,18 @@
 
 }
 
+.links-left {
+  width: 50%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.links-right {
+  width: 50%;
+  align-items: flex-end;
+  text-align: right;
+}
+
 .change-item-btn {
   font-size: 30px;
   text-decoration: none;
@@ -224,11 +236,18 @@
   color: #000;
 }
 
-.comment-comment_user-text {
-  font-size: 1.2rem;
+.comment-main {
+  display: flex;
+  font-size: 1rem;
+  padding: 5px;
 }
 
-.comment-comment_user-text a {
+.comment-nickname a {
   color: #000;
-  padding-left: 10px;
+  padding-right: 5px;
+  text-decoration: underline;
+}
+
+.comment-user-text {
+  padding-left: 5px;
 }
