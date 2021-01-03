@@ -11,11 +11,16 @@
       <div class='user-show-left'>
         <div class='user-profile'>
           <p class='user-profile-title'>プロフィール</p>
-          <p class='user-profile-text'>
-            ここにプロフィールを登録します。
-            ユーザー編集画面にて登録できるように実装予定です。
-            また、ユーザーのプロフィール画像をアップロードできるように実装も行います。
-          </p>
+          <div class='user-profile-text'>
+            <%= safe_join(@user.profile.split("\n"), tag(:br)) %>
+          </div>
+        </div>
+        <div class='user-setting'>
+          <p class='user-setting-title'>設定</p>
+          <%= link_to edit_user_registration_path, class: 'user-setting-profile' do %>
+            <div>プロフィール</div>
+            <div> ＞ </div>
+          <% end %>
         </div>
       </div>
       <div class='user-show-light'>

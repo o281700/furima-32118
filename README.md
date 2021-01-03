@@ -37,6 +37,7 @@ Things you may want to cover:
 | last_kana          | string | null: false               |
 | first_kana         | string | null: false               |
 | birthday           | date   | null: false               |
+| profile            | text   |                           |
 
 ### Association
 - has_many items
