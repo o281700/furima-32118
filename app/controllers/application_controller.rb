@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
       :nickname, :last_name, :first_name,
       :last_kana, :first_kana, :birthday
     ])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :profile])
   end
 
   def basic_auth
