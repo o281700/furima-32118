@@ -12,7 +12,9 @@
         <div class='user-profile'>
           <p class='user-profile-title'>プロフィール</p>
           <div class='user-profile-text'>
-            <%= safe_join(@user.profile.split("\n"), tag(:br)) %>
+            <% if @user.profile != nil %>
+              <%= safe_join(@user.profile.split("\n"), tag(:br)) %>
+            <% end %>
           </div>
         </div>
         <div class='user-setting'>
@@ -30,11 +32,12 @@
           <div class='item-contents'>
             <ul class='item-lists-user'>
             
-            <%= render partial: 'shared/items', collection: @user.items, as: :item %>
+              <%= render partial: 'shared/items', collection: @user.items, as: :item %>
 
-            <% if @user.items.size == 0 %>
-              <p class='user-item-nil'>＊＊＊ 出品中の商品がありません ＊＊＊</p>
-            <% end %>
+              <% if @user.items.size == 0 %>
+                <p class='user-item-nil'>＊＊＊ 出品中の商品がありません ＊＊＊</p>
+              <% end %>
+            </ul>
           </div>
 
         </div>

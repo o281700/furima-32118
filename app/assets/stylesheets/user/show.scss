@@ -72,6 +72,10 @@
   padding: 10px 1vw;
 }
 
+.user-profile-text {
+  min-height: 5vh;
+}
+
 // ユーザー出品商品一覧
 .user-show-light {
   border: 1px solid #acacac;
@@ -101,4 +105,8 @@
 
 .user-setting-profile:hover {
   background-color: #eee;
+}
+
+.user-item-nil {
+  margin: 0 auto;
 }
