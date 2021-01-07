@@ -1,0 +1,10 @@
+<%= render "shared/header" %>
+
+<div class='item-contents'>
+  <h2 class='title'>検索結果</h2>
+  <ul class='item-lists'>
+    <%= render partial: 'shared/items', collection: @items, as: :item %>
+  </ul>
+</div>
+
+<%= render "shared/footer" %>
