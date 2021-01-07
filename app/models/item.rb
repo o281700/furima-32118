@@ -27,6 +27,14 @@ class Item < ApplicationRecord
     validates :user_id
   end
 
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.includes(:user).order('created_at DESC')
+    end
+  end
+
   def previous
     Item.where("id < ?", self.id).order("id DESC").first
   end
