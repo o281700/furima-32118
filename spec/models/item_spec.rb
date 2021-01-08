@@ -31,27 +31,27 @@ RSpec.describe Item, type: :model do
       it 'カテゴリーを選択していないと登録できない' do
         @item.category_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Category status Select')
+        expect(@item.errors.full_messages).to include('Category Select')
       end
       it '商品状態を選択していないと登録できない' do
         @item.status_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Status status Select')
+        expect(@item.errors.full_messages).to include('Status Select')
       end
       it '配送料の負担を選択していないと登録できない' do
         @item.fee_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Fee status Select')
+        expect(@item.errors.full_messages).to include('Fee Select')
       end
       it '発送元地域を選択していないと登録できない' do
         @item.area_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Area status Select')
+        expect(@item.errors.full_messages).to include('Area Select')
       end
       it '発送日数を選択していないと登録できない' do
         @item.day_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Day status Select')
+        expect(@item.errors.full_messages).to include('Day Select')
       end
       it '価格が空だと登録できない' do
         @item.price = ''
