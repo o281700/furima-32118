@@ -97,6 +97,8 @@ Things you may want to cover:
 - belongs_to order
 - belongs_to_active_hash area
 
+## comments テーブル
+
 | column | type       | option                         |
 | ------ | ---------- | ------------------------------ |
 | text   | text       | null: false                    |
