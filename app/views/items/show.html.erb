@@ -101,6 +101,7 @@
               :
               <div class='comment-user-text'><%= comment.text %></div>
           </div>
+          <div class='comment-delete'><%= link_to '削除', item_comment_path(comment.item.id, comment.id), method: :delete %></div>
         <% end %>
       <% end%>
     </div>

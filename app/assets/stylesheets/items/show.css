@@ -251,3 +251,25 @@
 .comment-user-text {
   padding-left: 5px;
 }
+
+.comment-delete {
+  text-align: center;
+  border: 1px solid red;
+  width: 50px;
+  margin: 0 0 5px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.comment-delete a {
+  color: red;
+  display: block;
+}
+
+.comment-delete:hover {
+  background-color: red;
+}
+
+.comment-delete:hover a {
+  color: #fff;
+}
