@@ -263,6 +263,7 @@
 
 .comment-delete a {
   color: red;
+  display: block;
 }
 
 .comment-delete:hover {
