@@ -4,6 +4,12 @@ class CommentsController < ApplicationController
     redirect_to item_path(comment.item.id)
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to item_path(comment.item)
+  end
+
   private
 
   def comment_params
